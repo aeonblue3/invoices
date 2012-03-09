@@ -1,2 +1,4 @@
 # Ignore generated invoices
 *.html
+# Ignore error log
+error_log
