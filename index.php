@@ -30,8 +30,36 @@
 	<div class="container-fluid">
 		<h1>Main Invoice</h1>
 		<div class="row-fluid">
-			<div class="span2">Sidebar</div>
-			<div class="span10">
+			<div class="span4">
+			<h2>Invoices</h2>
+<?php
+$thisDir = opendir(".");
+while ($dirItem = readdir($thisDir))
+{
+	if (preg_match("/\.html/", $dirItem))
+		$dirArray[] = $dirItem;
+}
+closedir($thisDir);
+$dirItem = sort($dirArray);
+$index = count($dirArray);
+?>
+				<table class="table table-striped table-condensed">
+<?php
+for ($i = 0; $i < $index; $i++)
+{
+	echo "\t\t\t\t\t<tr>\n";
+	echo "\t\t\t\t\t\t<td>\n";
+	echo "\t\t\t\t\t\t\t<a href=\"".$dirArray[$i]."\" target=\"_BLANK\">".$dirArray[$i]."</a>\n";
+	echo "\t\t\t\t\t\t</td>\n";
+	echo "\t\t\t\t\t\t<td>\n";
+	echo "\t\t\t\t\t\t\t".date("M jS, Y h:i:s", filemtime($dirArray[$i]))."\n";
+	echo "\t\t\t\t\t\t</td>\n";
+	echo "\t\t\t\t\t</tr>\n";
+}
+?>
+				</table>
+			</div>
+			<div class="span8">
 				<form method="post" action="invoice.php" name="invoiceInsert" class="form-horizontal">
 					<input type="hidden" name="process" value="todo" />
 					<fieldset>
@@ -60,13 +88,13 @@
 						<legend>Billable Items</legend>
 						<div class="control-group">
 							<label class="control-label">Activity:</label>
-							<div class="controls"><textarea name="activity[]" type="text" value=""></textarea></div>
+							<div class="controls"><textarea name="activity[]" class="input-xlarge" type="text" value=""></textarea></div>
 							<br /><br />
 							<label class="control-label">Quantity:</label>
-							<div class="controls"><input type="text" name="quantity[]" value="" /></div>
+							<div class="controls"><input type="text" name="quantity[]" class="input-xlarge" value="" /></div>
 							<br /><br />
 							<label class="control-label">Rate:</label>
-							<div class="controls"><input type="text" name="rate[]" value="75.00" /></div>
+							<div class="controls"><input type="text" name="rate[]" class="input-xlarge" value="75.00" /></div>
 							<br /><br />
 						</div>
 						<button id="addAnother" class="btn btn-success">Add Another</button>
@@ -87,7 +115,7 @@
 							<div class="controls"><input type="text" class="input-xlarge" name="acctNumber" value="64 1301 9721" /></div>
 						</div>
 					</fieldset>
-					<input type="submit" name="submit" value="submit" />
+					<input type="submit" class="btn btn-primary" name="submit" value="submit" />
 				</form>
 			</div>
 		</div>
