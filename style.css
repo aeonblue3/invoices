@@ -1,0 +1,63 @@
+body {text-align: center; font-family: arial;}
+#invoiceMain {width: 900px; padding: 10px; margin: 0 auto; text-align: left;}
+#main {width: 800px; padding: 10px; margin: 0 auto; text-align: left;}
+ul li {list-style: none;}
+#items ul li {display: inline;}
+pre {
+	font-family: arial;
+}
+.null {border: none; background: none !important;}
+.fauxLink {cursor: pointer; color: blue; text-decoration: underline;}
+.fauxLink:hover {text-decoration: none;}
+.leftText {text-align: left;}
+.rightText {text-align: right;}
+.centerText {text-align: center;}
+
+.topBorder {border-top: 1px solid #000;}
+.bottomBorder {border-bottom: 1px solid #000;}
+.seperator {width: 100%; border-bottom: 1px dashed #bbb; text-align:center; font-size: 12px; color: #bbb; margin: 25px 0px;}
+.bankInfo {
+	font-size: 12px;
+}
+#sohoAddress {float: left;}
+#invoiceInfo {float: right;}
+#billTo {
+	margin-left: 50px;
+}
+#amountDue {
+	float: right;
+}
+h1 {
+	text-align: center;
+	font-weight: bold;
+}
+h2 {
+	text-align: right;
+	font-weight: bold;
+}
+p {
+	
+}
+table {
+	border-spacing: 0px;
+	border: none;
+	border-right: 1px solid #000;
+}
+th {
+	padding: 10px 5px;
+	border: 1px solid #000;
+	border-right: none;
+}
+td {
+	padding: 10px 5px;
+	border: 1px solid #000;
+	border-bottom: none;
+	border-top: none;
+	border-right: none;
+}
+tr {
+	border: 1px solid #000;
+	border-bottom: none;
+	border: right; none;
+}
+
