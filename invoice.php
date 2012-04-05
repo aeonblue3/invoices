@@ -1,14 +1,14 @@
 <?
 error_reporting(E_ALL);
+$test = 1;
 # For testing purposes only
 include('../dev/sohoadmin/program/includes/shared_functions.php');
 #echo testArray($_POST);
 #echo testArray($_POST['activity']);
-setlocale(LC_MONETARY, 'en_GB');
-function formatMoney($amount, $format)
+function formatMoney($amount)
 {
-    $format = "/".$format."/";
-	$money = preg_replace($format, "", money_format('%i', $amount));
+	$money = money_format('%(#1n', $amount);
+	#$money = preg_replace($format, "", money_format('%(#1n', $amount));
 	return $money;
 }
 
@@ -59,8 +59,9 @@ if ($_POST['process'] == 'todo')
 	$name = $_POST['name'];
 	$address = $_POST['address'];
 
-    # Set the currency symbol
-    $currencySymbol = $_POST['currencySymbol'];
+  # Set the currency symbol
+  $currencySymbol = $_POST['currencySymbol'];
+  setlocale(LC_MONETARY, 'en_'.$currencySymbol);
 	# These are arrays
 	$activity = $_POST['activity'];
 	$quantity = $_POST['quantity'];
@@ -162,7 +163,7 @@ ob_start();
 				<th bgcolor="#cccccc" class="centerText">AMOUNT DUE</th><th bgcolor="#cccccc" class="centerText">ENCLOSED</th>
 			</tr>
 			<tr>
-				<td class="rightText bottomBorder">£<?php echo $amountDue; ?></td><td class="bottomBorder"></td>
+				<td class="rightText bottomBorder"><?php echo $amountDue; ?></td><td class="bottomBorder"></td>
 			</tr>
 		</table>
 	</div>
@@ -185,13 +186,13 @@ ob_start();
 				echo $invoiceItems;
 			?>
 			<tr>
-				<td rowspan="3" class="null topBorder "><?php echo $sohoBankInfo; ?></td><td colspan="2" class="rightText topBorder bottomBorder">SUBTOTAL</td><td class="rightText topBorder bottomBorder">£<?php echo $subTotal; ?></td>
+				<td rowspan="3" class="null topBorder "><?php echo $sohoBankInfo; ?></td><td colspan="2" class="rightText topBorder bottomBorder">SUBTOTAL</td><td class="rightText topBorder bottomBorder"><?php echo $subTotal; ?></td>
 			</tr>
 			<tr>
-				<td colspan="2" class="rightText">TAX</td><td class="rightText">£<?php echo $taxAmount; ?></td>
+				<td colspan="2" class="rightText">TAX</td><td class="rightText"><?php echo $taxAmount; ?></td>
 			</tr>
 			<tr>
-				<th bgcolor="#cccccc" colspan="2" class="rightText bottomBorder">TOTAL</th><th bgcolor="#cccccc" class="rightText bottomBorder">£<?php echo $amountDue; ?></th>
+				<th bgcolor="#cccccc" colspan="2" class="rightText bottomBorder">TOTAL</th><th bgcolor="#cccccc" class="rightText bottomBorder"><?php echo $amountDue; ?></th>
 			</tr>
 		</table>
 	</div>
@@ -201,6 +202,7 @@ ob_start();
 	ob_end_clean();
 
 	echo $varOutput;
-	wwwcopy($varOutput, "invoice_".$invoiceNumber.".html");
+  if ($test != 1)
+  	wwwcopy($varOutput, "invoice_".$invoiceNumber.".html");
 //	echo "<a href=\"makepdf.php?file=invoice_".$invoiceNumber."\">Make PDF invoice</a>";
 ?>
