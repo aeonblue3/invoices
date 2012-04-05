@@ -105,6 +105,190 @@ for ($i = 0; $i < $index; $i++)
 						</div>
 						<button id="addAnother" class="btn btn-success">Add Another</button>
 					</fieldset>
+                    <fieldset>
+						<legend>General Options</legend>
+						<div class="control-group">
+							<label class="control-label">Curreny Symbol:</label>
+							<div class="controls">
+                                <select name="currencySymbol">
+    								<option>USD</option>
+    								<option>GBP</option>
+                                    <option>AED</option>
+									<option>AFN</option>
+									<option>ALL</option>
+									<option>AMD</option>
+									<option>ANG</option>
+									<option>AOA</option>
+									<option>ARS</option>
+									<option>AUD</option>
+									<option>AWG</option>
+									<option>AZN</option>
+									<option>BAM</option>
+									<option>BBD</option>
+									<option>BDT</option>
+									<option>BGN</option>
+									<option>BHD</option>
+									<option>BIF</option>
+									<option>BMD</option>
+									<option>BND</option>
+									<option>BOB</option>
+									<option>BRL</option>
+									<option>BSD</option>
+									<option>BTN</option>
+									<option>BWP</option>
+									<option>BYR</option>
+									<option>BZD</option>
+									<option>CAD</option>
+									<option>CDF</option>
+									<option>CHF</option>
+									<option>CLP</option>
+									<option>CNY</option>
+									<option>COP</option>
+									<option>CRC</option>
+									<option>CUC</option>
+									<option>CUP</option>
+									<option>CVE</option>
+									<option>CZK</option>
+									<option>DJF</option>
+									<option>DKK</option>
+									<option>DOP</option>
+									<option>DZD</option>
+									<option>EGP</option>
+									<option>ERN</option>
+									<option>ETB</option>
+									<option>EUR</option>
+									<option>FJD</option>
+									<option>FKP</option>
+									<option>GEL</option>
+									<option>GGP</option>
+									<option>GHS</option>
+									<option>GIP</option>
+									<option>GMD</option>
+									<option>GNF</option>
+									<option>GTQ</option>
+									<option>GYD</option>
+									<option>HKD</option>
+									<option>HNL</option>
+									<option>HRK</option>
+									<option>HTG</option>
+									<option>HUF</option>
+									<option>IDR</option>
+									<option>ILS</option>
+									<option>IMP</option>
+									<option>INR</option>
+									<option>IQD</option>
+									<option>IRR</option>
+									<option>ISK</option>
+									<option>JEP</option>
+									<option>JMD</option>
+									<option>JOD</option>
+									<option>JPY</option>
+									<option>KES</option>
+									<option>KGS</option>
+									<option>KHR</option>
+									<option>KMF</option>
+									<option>KPW</option>
+									<option>KRW</option>
+									<option>KWD</option>
+									<option>KYD</option>
+									<option>KZT</option>
+									<option>LAK</option>
+									<option>LBP</option>
+									<option>LKR</option>
+									<option>LRD</option>
+									<option>LSL</option>
+									<option>LTL</option>
+									<option>LVL</option>
+									<option>LYD</option>
+									<option>MAD</option>
+									<option>MDL</option>
+									<option>MGA</option>
+									<option>MKD</option>
+									<option>MMK</option>
+									<option>MNT</option>
+									<option>MOP</option>
+									<option>MRO</option>
+									<option>MUR</option>
+									<option>MVR</option>
+									<option>MWK</option>
+									<option>MXN</option>
+									<option>MYR</option>
+									<option>MZN</option>
+									<option>NAD</option>
+									<option>NGN</option>
+									<option>NIO</option>
+									<option>NOK</option>
+									<option>NPR</option>
+									<option>NZD</option>
+									<option>OMR</option>
+									<option>PAB</option>
+									<option>PEN</option>
+									<option>PGK</option>
+									<option>PHP</option>
+									<option>PKR</option>
+									<option>PLN</option>
+									<option>PYG</option>
+									<option>QAR</option>
+									<option>RON</option>
+									<option>RSD</option>
+									<option>RUB</option>
+									<option>RWF</option>
+									<option>SAR</option>
+									<option>SBD</option>
+									<option>SCR</option>
+									<option>SDG</option>
+									<option>SEK</option>
+									<option>SGD</option>
+									<option>SHP</option>
+									<option>SLL</option>
+									<option>SOS</option>
+									<option>SP</option>
+									<option>SRD</option>
+									<option>STD</option>
+									<option>SVC</option>
+									<option>SYP</option>
+									<option>SZL</option>
+									<option>THB</option>
+									<option>TJS</option>
+									<option>TMT</option>
+									<option>TND</option>
+									<option>TOP</option>
+									<option>TRY</option>
+									<option>TTD</option>
+									<option>TVD</option>
+									<option>TWD</option>
+									<option>TZS</option>
+									<option>UAH</option>
+									<option>UGX</option>
+									<option>UYU</option>
+									<option>UZS</option>
+									<option>VEF</option>
+									<option>VND</option>
+									<option>VUV</option>
+									<option>WST</option>
+									<option>XAF</option>
+									<option>XCD</option>
+									<option>XDR</option>
+									<option>XOF</option>
+									<option>XPF</option>
+									<option>YER</option>
+									<option>ZAR</option>
+									<option>ZMK</option>
+									<option>ZWD</option>
+
+                                </select>
+                            </div>
+							<br /><br />
+							<label class="control-label">ABA Routing Number:</label>
+							<div class="controls"><input type="text" class="input-xlarge" name="routing" value="062005690" /></div>
+							<br /><br />
+							<label class="control-label">Customer Account Name:</label>
+							<div class="controls"><input type="text" class="input-xlarge" name="acctName" value="Soholaunch.com, Inc." /></div>
+							<br /><br />
+							<label class="control-label">Customer Account Number:</label>
+							<div class="controls"><input type="text" class="input-xlarge" name="acctNumber" value="64 1301 9721" /></div>
+						</div>
+					</fieldset>
 					<fieldset>
 						<legend>Bank Options</legend>
 						<div class="control-group">

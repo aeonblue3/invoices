@@ -5,9 +5,10 @@ include('../dev/sohoadmin/program/includes/shared_functions.php');
 #echo testArray($_POST);
 #echo testArray($_POST['activity']);
 setlocale(LC_MONETARY, 'en_GB');
-function formatMoney($amount)
+function formatMoney($amount, $format)
 {
-	$money = preg_replace("/GBP/", "", money_format('%i', $amount));
+    $format = "/".$format."/";
+	$money = preg_replace($format, "", money_format('%i', $amount));
 	return $money;
 }
 
@@ -58,6 +59,8 @@ if ($_POST['process'] == 'todo')
 	$name = $_POST['name'];
 	$address = $_POST['address'];
 
+    # Set the currency symbol
+    $currencySymbol = $_POST['currencySymbol'];
 	# These are arrays
 	$activity = $_POST['activity'];
 	$quantity = $_POST['quantity'];
