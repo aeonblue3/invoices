@@ -105,6 +105,7 @@ for ($i = 0; $i < $index; $i++)
 						</div>
 						<button id="addAnother" class="btn btn-success">Add Another</button>
 					</fieldset>
+<<<<<<< HEAD
                     <fieldset>
 						<legend>General Options</legend>
 						<div class="control-group">
@@ -118,6 +119,8 @@ for ($i = 0; $i < $index; $i++)
               </div>
 						</div>
 					</fieldset>
+=======
+>>>>>>> parent of b8c9233... Added currency picker
 					<fieldset>
 						<legend>Bank Options</legend>
 						<div class="control-group">
