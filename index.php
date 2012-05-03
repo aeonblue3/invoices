@@ -28,13 +28,7 @@
 </head>
 <body>
 	<div class="container-fluid">
-		<div class="navbar">
-			<div class="navbar-inner">
-				<div class="container">
-					<a class="brand" href="index.php">Invoice Creator</a>
-				</div>
-			</div>
-		</div>
+		<h1>Main Invoice</h1>
 		<div class="row-fluid">
 			<div class="span4">
 			<h2>Invoices</h2>
