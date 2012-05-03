@@ -1,21 +1,14 @@
 <?
 error_reporting(E_ALL);
-$test = 1;
+$test = 0;
 # For testing purposes only
 include('../dev/sohoadmin/program/includes/shared_functions.php');
 #echo testArray($_POST);
 #echo testArray($_POST['activity']);
-<<<<<<< HEAD
+setlocale(LC_MONETARY, 'en_GB.UTF-8');
 function formatMoney($amount)
 {
-	$money = money_format('%(#1n', $amount);
-	#$money = preg_replace($format, "", money_format('%(#1n', $amount));
-=======
-setlocale(LC_MONETARY, 'en_GB');
-function formatMoney($amount)
-{
-	$money = preg_replace("/GBP/", "", money_format('%i', $amount));
->>>>>>> parent of b8c9233... Added currency picker
+	$money = preg_replace("/GBP/", "", money_format('%(#2n', $amount));
 	return $money;
 }
 
@@ -34,18 +27,18 @@ function errorCheck($line)
 	echo $line;
 	exit;
 }
-function wwwcopy($link,$file) 
-{ 
-//	$fp = @fopen($link,"r"); 
-//	while(!feof($fp)) 
-//	{ 
-//		$cont.= fread($fp,1024); 
-//	} 
-//	fclose($fp); 
+function wwwcopy($link,$file)
+{
+//	$fp = @fopen($link,"r");
+//	while(!feof($fp))
+//	{
+//		$cont.= fread($fp,1024);
+//	}
+//	fclose($fp);
 
-	$fp2 = @fopen($file,"w"); 
-	fwrite($fp2,$link); 
-	fclose($fp2); 
+	$fp2 = @fopen($file,"w");
+	fwrite($fp2,$link);
+	fclose($fp2);
 }
 if ($_POST['process'] == 'todo')
 
@@ -66,12 +59,9 @@ if ($_POST['process'] == 'todo')
 	$name = $_POST['name'];
 	$address = $_POST['address'];
 
-<<<<<<< HEAD
   # Set the currency symbol
   $currencySymbol = $_POST['currencySymbol'];
-  setlocale(LC_MONETARY, 'en_'.$currencySymbol);
-=======
->>>>>>> parent of b8c9233... Added currency picker
+#  setlocale(LC_MONETARY, 'en_'.$currencySymbol);
 	# These are arrays
 	$activity = $_POST['activity'];
 	$quantity = $_POST['quantity'];
@@ -95,9 +85,9 @@ if ($_POST['process'] == 'todo')
 		$invoiceItems .= "\t\t</tr>\n";
 	}
 	($taxPercentage == "") ? $taxPercentage = 0 : "";
-	$subTotal = formatMoney($subTotal);
 	$taxAmount = getTaxRate($taxPercentage, $subTotal);
 	$amountDue = $taxAmount + $subTotal;
+	$subTotal = formatMoney($subTotal);
 	$taxAmount = formatMoney($taxAmount);
 	$amountDue = formatMoney($amountDue);
 
@@ -212,7 +202,8 @@ ob_start();
 	ob_end_clean();
 
 	echo $varOutput;
-  if ($test != 1)
-  	wwwcopy($varOutput, "invoice_".$invoiceNumber.".html");
+  if ($test != 1) {
+    wwwcopy($varOutput, "invoice_".$invoiceNumber.".html");
+  }
 //	echo "<a href=\"makepdf.php?file=invoice_".$invoiceNumber."\">Make PDF invoice</a>";
 ?>
